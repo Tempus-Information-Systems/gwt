@@ -119,6 +119,16 @@ public abstract class AbstractSerializationStreamWriter extends
 
     saveIndexForObject(instance);
 
+	  //HACK TO MAKE COMMON LISTS SERIALIZABLE
+	  if (instance instanceof List) {
+		  String className = instance.getClass().getName();
+		  if (className.startsWith("java.util.ImmutableCollections$") || className.startsWith(
+				  "java.util.Collections$")) {
+			  instance = new ArrayList<>((List) instance);
+		  }
+	  }
+	  //HACK END -----
+
     // Serialize the type signature
     String typeSignature = getObjectTypeSignature(instance);
     if (typeSignature == null) {
