@@ -8,3 +8,7 @@
 /maven/poms/**/pom.xml
 
 /maven/tempus-k8s-prod-a67045426387.json
+
+.DS_Store
+
+.idea/
