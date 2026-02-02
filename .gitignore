@@ -9,3 +9,9 @@
 
 # Maven build directories for samples
 samples/**/target/
+
+/maven/tempus-k8s-prod-a67045426387.json
+
+.idea
+
+.DS_Store
